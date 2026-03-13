@@ -16,7 +16,7 @@ export function RSVPForm({ templateId }: { templateId: string }) {
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const newEntry: RSVPEntry = {
-      id: crypto.randomUUID(),
+      id: Date.now().toString(36) + Math.random().toString(36).slice(2),
       ...formData,
       createdAt: new Date().toISOString(),
     };

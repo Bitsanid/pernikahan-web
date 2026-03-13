@@ -166,7 +166,7 @@ export default function Home() {
               </div>
               <h3 className="text-lg font-semibold mb-2">Premium</h3>
               <div className="text-4xl font-bold mb-1">
-                Rp 99K
+                Rp 99.000
               </div>
               <p className="text-white/50 text-sm mb-4">per undangan</p>
               <ul className="space-y-3 text-sm text-white/80 mb-8">
