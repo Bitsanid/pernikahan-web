@@ -1,6 +1,8 @@
 # Wedding Invite SaaS - Platform Undangan Pernikahan Digital
 
 [![GitHub stars](https://img.shields.io/github/stars/abraham-yusuf/pernikahan-web.svg)](https://github.com/abraham-yusuf/pernikahan-web/stargazers)
+[![Vercel](https://therealsujitk-vercel-badge.vercel.app?url=https://nikah-digital.vercel.app)](https://nikah-digital.vercel.app)
+**[Coba Langsung → nikah-digital.vercel.app](https://nikah-digital.vercel.app)**
 
 ## Deskripsi
 Platform SaaS untuk buat dan jual undangan pernikahan digital custom. User bisa pilih dari library template wedding theme (modern, vintage, floral, etc.), customize teks/foto, tambah RSVP/guest management, lalu generate/share. Monetisasi via subscription ($5-20/bulan) atau per-undangan ($1-5). Dibangun dari MVP React/Next.js, sekarang dengan backend untuk multi-user.
