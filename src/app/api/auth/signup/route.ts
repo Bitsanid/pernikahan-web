@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { ID } from "node-appwrite";
-import { createAdminClient, SESSION_COOKIE_NAME } from "@/lib/appwrite";
+import { createAdminClient, createSessionClient, SESSION_COOKIE_NAME } from "@/lib/appwrite";
 
 export async function POST(request: NextRequest) {
   try {
@@ -13,13 +13,23 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { account } = createAdminClient();
+    const { account: adminAccount } = createAdminClient();
 
     // Create user account
-    await account.create(ID.unique(), email, password, name);
+    await adminAccount.create(ID.unique(), email, password, name);
 
     // Create a session for the new user
-    const session = await account.createEmailPasswordSession(email, password);
+    const session = await adminAccount.createEmailPasswordSession(email, password);
+
+    // Initialize user preferences
+    try {
+      const { account: sessionAccount } = createSessionClient(session.secret);
+      await sessionAccount.updatePrefs({ tier: "free" });
+    } catch (prefError) {
+      console.error("Failed to set user preferences:", prefError);
+      // We don't want to fail the whole signup if just prefs fail,
+      // but in a real app we might want more robust error handling
+    }
 
     const response = NextResponse.json(
       { message: "Akun berhasil dibuat." },

@@ -1,4 +1,4 @@
-import { Client, Account, Databases, Storage } from "node-appwrite";
+import { Client, Account, Databases, Storage, Users } from "node-appwrite";
 
 /**
  * Creates a server-side Appwrite client using the API key.
@@ -19,6 +19,9 @@ export function createAdminClient() {
     },
     get storage() {
       return new Storage(client);
+    },
+    get users() {
+      return new Users(client);
     },
   };
 }
