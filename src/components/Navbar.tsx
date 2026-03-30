@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { getLoggedInUser } from "@/lib/auth";
+import MobileMenu from "./MobileMenu";
 
 export async function Navbar() {
   const user = await getLoggedInUser();
@@ -14,6 +15,8 @@ export async function Navbar() {
               Nikah<span className="text-primary">Digital</span>
             </span>
           </Link>
+
+          {/* Desktop Menu */}
           <div className="hidden sm:flex items-center gap-6">
             <Link
               href="/#templates"
@@ -57,6 +60,9 @@ export async function Navbar() {
               </div>
             )}
           </div>
+
+          {/* Mobile Menu */}
+          <MobileMenu isLoggedIn={!!user} />
         </div>
       </div>
     </nav>
