@@ -142,14 +142,14 @@ src/
 ## 🚀 HIGH PRIORITY TASKS (v2.0)
 
 ### 1. Authentication System
-- [ ] Setup Appwrite project
-  - [ ] Configure email/password auth
-  - [ ] Add Google OAuth
-  - [ ] Create user schema
-- [ ] Build login/signup pages
-- [ ] Implement session management
-- [ ] Add middleware for protected routes
-- [ ] Add logout functionality
+- [x] Setup Appwrite project
+  - [x] Configure email/password auth
+  - [x] Add Google OAuth
+  - [x] Create user schema (using Appwrite User Preferences)
+- [x] Build login/signup pages
+- [x] Implement session management
+- [x] Add middleware/proxy for protected routes
+- [x] Add logout functionality
 
 ### 2. Database Setup
 - [ ] Design Appwrite/MongoDB collections
@@ -336,9 +336,9 @@ src/app/
 ## 🎨 COMPONENT CHECKLIST
 
 ### Auth Components
-- [ ] LoginForm.tsx
-- [ ] SignupForm.tsx
-- [ ] ProtectedRoute.tsx
+- [x] LoginForm.tsx
+- [x] SignupForm.tsx
+- [x] ProtectedRoute.tsx (implemented via src/proxy.ts)
 
 ### Dashboard Components
 - [ ] InvitationList.tsx
@@ -374,11 +374,11 @@ src/app/
 ## 📝 API ENDPOINTS TO BUILD
 
 ### Authentication
-- POST `/api/auth/signup` - Register user
-- POST `/api/auth/login` - Login user
-- POST `/api/auth/logout` - Logout user
-- GET `/api/auth/me` - Get current user
-- POST `/api/auth/refresh` - Refresh token
+- [x] POST `/api/auth/signup` - Register user
+- [x] POST `/api/auth/login` - Login user
+- [x] POST `/api/auth/logout` - Logout user
+- [x] GET `/api/auth/me` - Get current user
+- [ ] POST `/api/auth/refresh` - Refresh token
 
 ### Invitations
 - GET `/api/invitations` - List user's invitations
